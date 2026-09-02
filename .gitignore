@@ -1,0 +1,5 @@
+# local index state - rebuild it with `nuthatch dev`, never commit it
+nuthatch.redb
+nuthatch.redb.*
+segments/
+data/

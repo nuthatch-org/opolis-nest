@@ -1,0 +1,422 @@
+# semantic.toml - what this nest's data *means* (RFC-0016). Read by the MCP `schema`
+# tool, the admin UI, and the scaffolded skill. Edit descriptions freely; the
+# `[table.*.footguns]` are DERIVED from the ABI and regenerated - leave them be.
+
+schema_version = 1
+
+[nest]
+description = "The `opolis-nest` nest on mainnet. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__new_admin]
+description = "`NewAdmin(address,address)` events emitted by the `opolis_pay` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewAdmin(address,address) event"
+
+[table.opolis_pay__new_admin.columns]
+oldAdmin = "The `oldAdmin` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+opolisAdmin = "The `opolisAdmin` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__new_destination]
+description = "`NewDestination(address,address)` events emitted by the `opolis_pay` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewDestination(address,address) event"
+
+[table.opolis_pay__new_destination.columns]
+destination = "The `destination` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+oldDestination = "The `oldDestination` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__new_helper]
+description = "`NewHelper(address,address)` events emitted by the `opolis_pay` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewHelper(address,address) event"
+
+[table.opolis_pay__new_helper.columns]
+newHelper = "The `newHelper` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+oldHelper = "The `oldHelper` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__new_tokens]
+description = "`NewTokens(address[])` events emitted by the `opolis_pay` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewTokens(address[]) event"
+
+[table.opolis_pay__new_tokens.columns]
+newTokens = "The `newTokens` address[] parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__ops_payroll_withdraw]
+description = "`OpsPayrollWithdraw(address,uint256,uint256)` events emitted by the `opolis_pay` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OpsPayrollWithdraw(address,uint256,uint256) event"
+
+[table.opolis_pay__ops_payroll_withdraw.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+payrollId = "The `payrollId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__ops_payroll_withdraw.footguns]
+big_ints = [
+    "payrollId",
+    "amount",
+]
+overflows_dec = [
+    "payrollId",
+    "amount",
+]
+
+[table.opolis_pay__ops_stake_withdraw]
+description = "`OpsStakeWithdraw(address,uint256,uint256)` events emitted by the `opolis_pay` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OpsStakeWithdraw(address,uint256,uint256) event"
+
+[table.opolis_pay__ops_stake_withdraw.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+stakeId = "The `stakeId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__ops_stake_withdraw.footguns]
+big_ints = [
+    "stakeId",
+    "amount",
+]
+overflows_dec = [
+    "stakeId",
+    "amount",
+]
+
+[table.opolis_pay__paid]
+description = "`Paid(address,address,uint256,uint256)` events emitted by the `opolis_pay` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Paid(address,address,uint256,uint256) event"
+
+[table.opolis_pay__paid.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+payor = "The `payor` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+payrollId = "The `payrollId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__paid.footguns]
+big_ints = [
+    "payrollId",
+    "amount",
+]
+overflows_dec = [
+    "payrollId",
+    "amount",
+]
+
+[table.opolis_pay__setup_complete]
+description = "`SetupComplete(address,address,address,address[])` events emitted by the `opolis_pay` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per SetupComplete(address,address,address,address[]) event"
+
+[table.opolis_pay__setup_complete.columns]
+admin = "The `admin` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+destination = "The `destination` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+helper = "The `helper` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+tokens = "The `tokens` address[] parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__staked]
+description = "`Staked(address,address,uint256,uint256)` events emitted by the `opolis_pay` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Staked(address,address,uint256,uint256) event"
+
+[table.opolis_pay__staked.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+memberId = "The `memberId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__staked.footguns]
+big_ints = [
+    "amount",
+    "memberId",
+]
+overflows_dec = [
+    "amount",
+    "memberId",
+]
+
+[table.opolis_pay__sweep]
+description = "`Sweep(address,uint256)` events emitted by the `opolis_pay` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Sweep(address,uint256) event"
+
+[table.opolis_pay__sweep.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay__sweep.footguns]
+big_ints = ["amount"]
+overflows_dec = ["amount"]
+
+[table.opolis_pay_v2__new_admin]
+description = "`NewAdmin(address,address)` events emitted by the `opolis_pay_v2` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewAdmin(address,address) event"
+
+[table.opolis_pay_v2__new_admin.columns]
+oldAdmin = "The `oldAdmin` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+opolisAdmin = "The `opolisAdmin` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v2__new_destination]
+description = "`NewDestination(address,address)` events emitted by the `opolis_pay_v2` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewDestination(address,address) event"
+
+[table.opolis_pay_v2__new_destination.columns]
+destination = "The `destination` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+oldDestination = "The `oldDestination` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v2__new_helper]
+description = "`NewHelper(address,address)` events emitted by the `opolis_pay_v2` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewHelper(address,address) event"
+
+[table.opolis_pay_v2__new_helper.columns]
+newHelper = "The `newHelper` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+oldHelper = "The `oldHelper` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v2__new_tokens]
+description = "`NewTokens(address[])` events emitted by the `opolis_pay_v2` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewTokens(address[]) event"
+
+[table.opolis_pay_v2__new_tokens.columns]
+newTokens = "The `newTokens` address[] parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v2__ops_payroll_withdraw]
+description = "`OpsPayrollWithdraw(address,uint256,uint256)` events emitted by the `opolis_pay_v2` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OpsPayrollWithdraw(address,uint256,uint256) event"
+
+[table.opolis_pay_v2__ops_payroll_withdraw.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+payrollId = "The `payrollId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v2__ops_payroll_withdraw.footguns]
+big_ints = [
+    "payrollId",
+    "amount",
+]
+overflows_dec = [
+    "payrollId",
+    "amount",
+]
+
+[table.opolis_pay_v2__ops_stake_withdraw]
+description = "`OpsStakeWithdraw(address,uint256,uint256,uint256)` events emitted by the `opolis_pay_v2` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OpsStakeWithdraw(address,uint256,uint256,uint256) event"
+
+[table.opolis_pay_v2__ops_stake_withdraw.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+stakeId = "The `stakeId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+stakeNumber = "The `stakeNumber` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v2__ops_stake_withdraw.footguns]
+big_ints = [
+    "stakeId",
+    "stakeNumber",
+    "amount",
+]
+overflows_dec = [
+    "stakeId",
+    "stakeNumber",
+    "amount",
+]
+
+[table.opolis_pay_v2__paid]
+description = "`Paid(address,address,uint256,uint256)` events emitted by the `opolis_pay_v2` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Paid(address,address,uint256,uint256) event"
+
+[table.opolis_pay_v2__paid.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+payor = "The `payor` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+payrollId = "The `payrollId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v2__paid.footguns]
+big_ints = [
+    "payrollId",
+    "amount",
+]
+overflows_dec = [
+    "payrollId",
+    "amount",
+]
+
+[table.opolis_pay_v2__setup_complete]
+description = "`SetupComplete(address,address,address,address[])` events emitted by the `opolis_pay_v2` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per SetupComplete(address,address,address,address[]) event"
+
+[table.opolis_pay_v2__setup_complete.columns]
+admin = "The `admin` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+destination = "The `destination` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+helper = "The `helper` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+tokens = "The `tokens` address[] parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v2__staked]
+description = "`Staked(address,address,uint256,uint256,uint256)` events emitted by the `opolis_pay_v2` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Staked(address,address,uint256,uint256,uint256) event"
+
+[table.opolis_pay_v2__staked.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+memberId = "The `memberId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+stakeNumber = "The `stakeNumber` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v2__staked.footguns]
+big_ints = [
+    "amount",
+    "memberId",
+    "stakeNumber",
+]
+overflows_dec = [
+    "amount",
+    "memberId",
+    "stakeNumber",
+]
+
+[table.opolis_pay_v2__sweep]
+description = "`Sweep(address,uint256)` events emitted by the `opolis_pay_v2` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Sweep(address,uint256) event"
+
+[table.opolis_pay_v2__sweep.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v2__sweep.footguns]
+big_ints = ["amount"]
+overflows_dec = ["amount"]
+
+[table.opolis_pay_v3__new_admin]
+description = "`NewAdmin(address,address)` events emitted by the `opolis_pay_v3` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewAdmin(address,address) event"
+
+[table.opolis_pay_v3__new_admin.columns]
+oldAdmin = "The `oldAdmin` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+opolisAdmin = "The `opolisAdmin` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v3__new_destination]
+description = "`NewDestination(address,address,address)` events emitted by the `opolis_pay_v3` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewDestination(address,address,address) event"
+
+[table.opolis_pay_v3__new_destination.columns]
+destination = "The `destination` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+oldDestination = "The `oldDestination` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v3__new_helper]
+description = "`NewHelper(address,address)` events emitted by the `opolis_pay_v3` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewHelper(address,address) event"
+
+[table.opolis_pay_v3__new_helper.columns]
+newHelper = "The `newHelper` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+oldHelper = "The `oldHelper` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v3__new_tokens]
+description = "`NewTokens(address[],address[])` events emitted by the `opolis_pay_v3` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per NewTokens(address[],address[]) event"
+
+[table.opolis_pay_v3__new_tokens.columns]
+newDestinations = "The `newDestinations` address[] parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+newTokens = "The `newTokens` address[] parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v3__ops_payroll_withdraw]
+description = "`OpsPayrollWithdraw(address,uint256,uint256)` events emitted by the `opolis_pay_v3` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OpsPayrollWithdraw(address,uint256,uint256) event"
+
+[table.opolis_pay_v3__ops_payroll_withdraw.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+payrollId = "The `payrollId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v3__ops_payroll_withdraw.footguns]
+big_ints = [
+    "payrollId",
+    "amount",
+]
+overflows_dec = [
+    "payrollId",
+    "amount",
+]
+
+[table.opolis_pay_v3__ops_stake_withdraw]
+description = "`OpsStakeWithdraw(address,uint256,uint256,uint256)` events emitted by the `opolis_pay_v3` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per OpsStakeWithdraw(address,uint256,uint256,uint256) event"
+
+[table.opolis_pay_v3__ops_stake_withdraw.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+stakeId = "The `stakeId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+stakeNumber = "The `stakeNumber` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v3__ops_stake_withdraw.footguns]
+big_ints = [
+    "stakeId",
+    "stakeNumber",
+    "amount",
+]
+overflows_dec = [
+    "stakeId",
+    "stakeNumber",
+    "amount",
+]
+
+[table.opolis_pay_v3__paid]
+description = "`Paid(address,address,uint256,uint256)` events emitted by the `opolis_pay_v3` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Paid(address,address,uint256,uint256) event"
+
+[table.opolis_pay_v3__paid.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+payor = "The `payor` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+payrollId = "The `payrollId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v3__paid.footguns]
+big_ints = [
+    "payrollId",
+    "amount",
+]
+overflows_dec = [
+    "payrollId",
+    "amount",
+]
+
+[table.opolis_pay_v3__setup_complete]
+description = "`SetupComplete(address,address,address,address[],address[])` events emitted by the `opolis_pay_v3` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per SetupComplete(address,address,address,address[],address[]) event"
+
+[table.opolis_pay_v3__setup_complete.columns]
+admin = "The `admin` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+ethLiquidation = "The `ethLiquidation` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+helper = "The `helper` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+liqDestinations = "The `liqDestinations` address[] parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+tokens = "The `tokens` address[] parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v3__staked]
+description = "`Staked(address,address,uint256,uint256,uint256)` events emitted by the `opolis_pay_v3` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Staked(address,address,uint256,uint256,uint256) event"
+
+[table.opolis_pay_v3__staked.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+memberId = "The `memberId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+stakeNumber = "The `stakeNumber` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+staker = "The `staker` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v3__staked.footguns]
+big_ints = [
+    "amount",
+    "memberId",
+    "stakeNumber",
+]
+overflows_dec = [
+    "amount",
+    "memberId",
+    "stakeNumber",
+]
+
+[table.opolis_pay_v3__sweep]
+description = "`Sweep(address,uint256)` events emitted by the `opolis_pay_v3` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Sweep(address,uint256) event"
+
+[table.opolis_pay_v3__sweep.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.opolis_pay_v3__sweep.footguns]
+big_ints = ["amount"]
+overflows_dec = ["amount"]
+
+[view]
+
+# Authored views (views/*.sql) are described here so the MCP/`/schema` can render them:
+# [view.your_view_name]
+# description = "What this derivation computes."

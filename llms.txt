@@ -1,0 +1,53 @@
+# nuthatch nest on mainnet
+
+A self-hosted blockchain index. Query it locally; there is no third-party API.
+
+## Contracts
+- `opolis_pay` = 0xb25a1f6089b88766434223068d0a4ddcdf011237
+- `opolis_pay_v2` = 0xae7db356c82401b111134041533ab490906c8ed5
+- `opolis_pay_v3` = 0x22a8fe0109b5457ae5c9e916838e807dd8b0a5b6
+
+## Tables (one per contract event)
+- `opolis_pay__new_admin` - NewAdmin(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, oldAdmin, opolisAdmin)
+- `opolis_pay__new_destination` - NewDestination(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, oldDestination, destination)
+- `opolis_pay__new_helper` - NewHelper(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, oldHelper, newHelper)
+- `opolis_pay__new_tokens` - NewTokens(address[]) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, newTokens)
+- `opolis_pay__ops_payroll_withdraw` - OpsPayrollWithdraw(address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, token, payrollId, amount)
+- `opolis_pay__ops_stake_withdraw` - OpsStakeWithdraw(address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, token, stakeId, amount)
+- `opolis_pay__paid` - Paid(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, payor, token, payrollId, amount)
+- `opolis_pay__setup_complete` - SetupComplete(address,address,address,address[]) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, destination, admin, helper, tokens)
+- `opolis_pay__staked` - Staked(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, staker, token, amount, memberId)
+- `opolis_pay__sweep` - Sweep(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, token, amount)
+- `opolis_pay_v2__new_admin` - NewAdmin(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, oldAdmin, opolisAdmin)
+- `opolis_pay_v2__new_destination` - NewDestination(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, oldDestination, destination)
+- `opolis_pay_v2__new_helper` - NewHelper(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, oldHelper, newHelper)
+- `opolis_pay_v2__new_tokens` - NewTokens(address[]) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, newTokens)
+- `opolis_pay_v2__ops_payroll_withdraw` - OpsPayrollWithdraw(address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, token, payrollId, amount)
+- `opolis_pay_v2__ops_stake_withdraw` - OpsStakeWithdraw(address,uint256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, token, stakeId, stakeNumber, amount)
+- `opolis_pay_v2__paid` - Paid(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, payor, token, payrollId, amount)
+- `opolis_pay_v2__setup_complete` - SetupComplete(address,address,address,address[]) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, destination, admin, helper, tokens)
+- `opolis_pay_v2__staked` - Staked(address,address,uint256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, staker, token, amount, memberId, stakeNumber)
+- `opolis_pay_v2__sweep` - Sweep(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, token, amount)
+- `opolis_pay_v3__new_admin` - NewAdmin(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, oldAdmin, opolisAdmin)
+- `opolis_pay_v3__new_destination` - NewDestination(address,address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, oldDestination, token, destination)
+- `opolis_pay_v3__new_helper` - NewHelper(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, oldHelper, newHelper)
+- `opolis_pay_v3__new_tokens` - NewTokens(address[],address[]) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, newTokens, newDestinations)
+- `opolis_pay_v3__ops_payroll_withdraw` - OpsPayrollWithdraw(address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, token, payrollId, amount)
+- `opolis_pay_v3__ops_stake_withdraw` - OpsStakeWithdraw(address,uint256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, token, stakeId, stakeNumber, amount)
+- `opolis_pay_v3__paid` - Paid(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, payor, token, payrollId, amount)
+- `opolis_pay_v3__setup_complete` - SetupComplete(address,address,address,address[],address[]) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, admin, helper, ethLiquidation, tokens, liqDestinations)
+- `opolis_pay_v3__staked` - Staked(address,address,uint256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, staker, token, amount, memberId, stakeNumber)
+- `opolis_pay_v3__sweep` - Sweep(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, token, amount)
+
+## Live HTTP API (run `nuthatch dev`)
+- `GET /`                    index status
+- `GET /tables`              every table with its columns
+- `GET /table/{name}?limit=N` recent rows of one table (hot + sealed)
+- `GET /entity/{id}`         one row by id (`{block:012}-{logindex:06}`)
+- `GET /sql?q=SELECT...`     read-only SQL; each table is a view named `{alias}__{event}`
+- `GET /balances?limit=N`    top holder balances (when an ERC-20 Transfer table is present)
+- `GET /balance/{address}`   one address's derived balance
+
+## MCP (for coding agents)
+Run `nuthatch mcp` (stdio) to expose tools: status, schema, tables, table, sql, entity,
+balance, top_balances. Fully offline against the local instance; nothing phones home.

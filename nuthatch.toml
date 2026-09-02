@@ -1,0 +1,66 @@
+[nest]
+name = "opolis-nest"
+chain = "mainnet"
+chain_id = 1
+rpc_urls = [
+    "https://ethereum-rpc.publicnode.com",
+    "https://eth.merkle.io",
+    "https://1rpc.io/eth",
+    "https://eth.drpc.org",
+]
+schema_version = 1
+block_timestamps = true
+
+[[contracts]]
+alias = "opolis_pay"
+address = "0xb25a1f6089b88766434223068d0a4ddcdf011237"
+start_block = 14310598
+abi = "abis/opolis_pay.json"
+events = [
+    "SetupComplete",
+    "Staked",
+    "Paid",
+    "OpsPayrollWithdraw",
+    "OpsStakeWithdraw",
+    "Sweep",
+    "NewDestination",
+    "NewAdmin",
+    "NewHelper",
+    "NewTokens",
+]
+
+[[contracts]]
+alias = "opolis_pay_v2"
+address = "0xae7db356c82401b111134041533ab490906c8ed5"
+start_block = 14705318
+abi = "abis/opolis_pay_v2.json"
+events = [
+    "SetupComplete",
+    "Staked",
+    "Paid",
+    "OpsPayrollWithdraw",
+    "OpsStakeWithdraw",
+    "Sweep",
+    "NewDestination",
+    "NewAdmin",
+    "NewHelper",
+    "NewTokens",
+]
+
+[[contracts]]
+alias = "opolis_pay_v3"
+address = "0x22a8fe0109b5457ae5c9e916838e807dd8b0a5b6"
+start_block = 17294950
+abi = "abis/opolis_pay_v3.json"
+events = [
+    "SetupComplete",
+    "Staked",
+    "Paid",
+    "OpsPayrollWithdraw",
+    "OpsStakeWithdraw",
+    "Sweep",
+    "NewDestination",
+    "NewAdmin",
+    "NewHelper",
+    "NewTokens",
+]
