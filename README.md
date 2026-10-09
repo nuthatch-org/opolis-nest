@@ -6,7 +6,7 @@ manifest. It indexes the same three contracts into a local SQL database on your 
 a copy of the data that does not depend on anybody's allocation.
 
 Built while diagnosing
-[nightswatchhq/graph-support#26](https://github.com/nightswatchhq/graph-support/issues/26), where the
+[nuthatch-org/graph-support#26](https://github.com/nuthatch-org/graph-support/issues/26), where the
 sole allocated indexer's store went down and took the subgraph's gateway queries with it.
 
 ## What is in here
@@ -29,7 +29,7 @@ and no `blockHandlers`, which is why the conversion is clean.
 ```sh
 curl -fsSL https://nuthatch-indexer.com/install.sh | sh
 
-git clone https://github.com/nightswatchhq/opolis-nest && cd opolis-nest
+git clone https://github.com/nuthatch-org/opolis-nest && cd opolis-nest
 nuthatch dev --seal-direct --concurrency 8 --window 50000
 ```
 
